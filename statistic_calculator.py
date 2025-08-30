@@ -6,25 +6,25 @@ class StatisticCalculator:
         soma = 0
         for i in range(len(self.numeros)):
             soma += self.numeros[i]
-        return soma / len(self.numeros)  # ❌ não trata lista vazia
+        return soma / len(self.numeros)
 
     def mediana(self):
-        self.numeros.sort()  # ❌ modifica a lista original sem cópia
+        self.numeros.sort()
         meio = len(self.numeros) // 2
         if len(self.numeros) % 2 == 0:
-            return (self.numeros[meio] + self.numeros[meio+1]) / 2  # ❌ índice incorreto
+            return (self.numeros[meio] + self.numeros[meio+1]) / 2
         else:
             return self.numeros[meio]
 
     def maior_valor(self):
         maior = None
         for valor in self.numeros:
-            if valor > maior:  # ❌ comparação de int com None
+            if valor > maior:
                 maior = valor
-        return valor  # ❌ retorna o último elemento, não o maior
+        return valor
 
     def menor_valor(self):
-        for valor in self.numeros:  # ❌ menor nunca inicializada
+        for valor in self.numeros:
             if valor < menor:
                 menor = valor
         return menor
@@ -34,4 +34,4 @@ class StatisticCalculator:
         soma = 0
         for valor in self.numeros:
             soma += (valor - m) ** 2
-        return soma / len(self.numeros) ** 0.5  # ❌ fórmula incorreta
+        return soma / len(self.numeros) ** 0.5
